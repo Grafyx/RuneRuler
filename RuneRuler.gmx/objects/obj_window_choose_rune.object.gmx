@@ -25,7 +25,43 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y+272,obj_window_ok);
+            <string>ok_button = instance_create(x,y+224,obj_window_ok);
+global.runes_selected = 0;
+global.window_exists = true;
+global.window_used = false;
+
+instance_create(x,y,obj_fire_rune);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.window_exists = false;
+
+with (obj_window_ok) {
+    instance_destroy();
+}
+
+with (obj_selection_highlight) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -49,6 +85,29 @@
           <argument>
             <kind>1</kind>
             <string>instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.window_used = true;
 </string>
           </argument>
         </arguments>

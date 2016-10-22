@@ -52,31 +52,41 @@ clicked = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if level_unlocked == true {
+            <string>show_debug_message("Clicked is " + string(clicked) 
++ " and selected is " + string(selected)
++ " and image index is " + string(image_index)
++ " and level unlocked is " + string(level_unlocked));
+
+if level_unlocked == true and !clicked and !selected{
     image_index = 1;
 }
 
-if selected == true and image_index == 1 {
-    image_speed = 1;
-}
-
-if image_index &gt;= 6 and selected == true {
-    image_speed = 0;
-    image_index = 7;
-}
-
-else if selected == false and image_index &lt;= 7 and image_index &gt; 1 {
-    image_speed = -1;
+if (selected) {
+    if (image_index &gt;= 1){
+        image_speed = 1;
+    }
+    if image_index == 6 {
+        image_speed = 0;
+        image_index = 7;
+    }
+} else {
+    if image_index &lt;= 7 and image_index &gt; 1 {
+        image_speed = -1;
+    }
     if image_index &lt;= 1 {
         image_speed = 0;
         image_index = 1;
     }
 }
 
-if image_index &gt;= 21 and clicked == true {
-    image_speed = 0;
-    image_index = 22;
-    room_goto(rm_level1);
+if clicked {
+    if image_index &lt; 21  {
+        image_speed = 1;
+    } else if image_index &gt;= 21 {
+        image_speed = 0;
+        image_index = 22;
+        room_goto(rm_level1);
+    }
 }
 </string>
           </argument>
@@ -102,6 +112,7 @@ if image_index &gt;= 21 and clicked == true {
             <kind>1</kind>
             <string>image_index = 1;
 selected = false;
+clicked = false;
 </string>
           </argument>
         </arguments>
@@ -125,7 +136,6 @@ selected = false;
           <argument>
             <kind>1</kind>
             <string>if level_unlocked == true {
-    image_speed = 1;
     selected = true;
 }
 </string>
@@ -151,7 +161,6 @@ selected = false;
           <argument>
             <kind>1</kind>
             <string>if level_unlocked == true {
-    image_speed = 1;
     clicked = true;
 }
 </string>

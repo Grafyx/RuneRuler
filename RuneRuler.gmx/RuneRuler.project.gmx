@@ -11,10 +11,11 @@
     <sprite>sprites\sp_level_button</sprite>
     <sprite>sprites\sp_planting_tile</sprite>
     <sprite>sprites\sp_window_choose_rune</sprite>
-    <sprites name="runes">
+    <sprite>sprites\sp_window_ok</sprite>
+    <sprites name="sp_runes">
       <sprite>sprites\sp_fire_rune</sprite>
     </sprites>
-    <sprite>sprites\sp_window_ok</sprite>
+    <sprite>sprites\sp_selection_highlight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
@@ -33,11 +34,17 @@
     <object>objects\obj_tower</object>
     <objects name="level_buttons">
       <object>objects\obj_level_button_parent</object>
+      <object>objects\obj_level_button</object>
     </objects>
     <object>objects\obj_planting_tile</object>
     <object>objects\obj_window_choose_rune</object>
     <object>objects\obj_window_ok</object>
+    <objects name="obj_runes">
+      <object>objects\obj_fire_rune</object>
+    </objects>
+    <object>objects\obj_selection_highlight</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_level1</room>
     <room>rooms\rm_menu</room>

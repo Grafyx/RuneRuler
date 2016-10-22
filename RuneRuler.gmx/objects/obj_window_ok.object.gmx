@@ -3,7 +3,7 @@
   <spriteName>sp_window_ok</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -84,6 +84,7 @@ else {
             <string>if ready == true {
     instance_destroy();
     with(obj_window_choose_rune) instance_destroy();
+    global.window_exists = false;
 }
 </string>
           </argument>
